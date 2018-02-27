@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Garage Labs Corps</title>
+<meta name = "viewport" content="width=device-width,initial-scale=1, minimum-scale=0.4, maximum-scale=1.0">
+<meta name="description" content="Group of programmers">
+<link rel="icon" type="image/png" href="/pic/glc_c.png">
+<script src="/jlib/jquery.min.js"></script>
+<style>
+body {
+	margin:0;
+	padding:0;
+	font-family:arial;
+	color:white;
+	/*background-color:#002768;*/
+	background:linear-gradient(to bottom, #002768 70%,#001758 100%);
+}
+*:lang(it) {
+	display:none;
+}
+#tit {
+	width:100%;
+	max-width:100%;
+	text-align: center;
+	position: relative;
+	background-color: #002768;
+	z-index: 2;
+}
+#tit img {
+	width:30vw;
+	margin-left: 4.7vw;
+	float: left;
+}
+#tit span {
+	display: inline-block;
+	font-size: 6vw;
+	line-height: 30vw;
+	text-align: center;
+	font-weight: bold;
+}
+#navbar {
+	z-index: 2;
+	position: relative;
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+	background-color: #002768;
+	width: 21.2em;
+	max-width: 100%;
+}
+#navbar li {
+	float: left;
+	border-right: 1px #fff solid;
+}
+#navbar li:last-child {
+	border-right: none;
+}
+#navbar li a {
+	display: block;
+	text-align: center;
+	color: #fff;
+	padding: 8px;
+	background-color: #002768;
+	text-decoration: none;
+	transition: all 0.5s;
+}
+#navbar li a:hover {
+	background-color: #0059b4;
+}
+#navbarfixbox {
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #002768;
+}
+@media only screen and (max-width: 320px) {
+	#navbar {
+		width: 100%;
+		font-size: 4vw;
+	}
+}
+a {
+	text-decoration: none;
+	color: #0059b4;
+	position: relative;
+	cursor: pointer;
+}
+a:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #0059b4;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+a:hover:before, #cont a:focus:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+#cont {
+	width: 50em;
+	max-width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+	color: #fff;
+	/*background-color: #002768;*/
+}
+#cont .ph:first-letter {font-size:190%;font-weight:bold;}
+#cont .T {
+	text-align: center;
+	font-size: 50px;
+	position: relative;
+	cursor:default;
+}
+#cont .T:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #0059b4;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+#cont .T:hover:before, a:focus:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+@media only screen and (max-width: 770px) {
+	#tit {
+		text-align: center;
+	}
+	#tit img {
+		margin: 0;
+		width:100%;
+	}
+	#tit span {
+		font-size: 10vw;
+	}
+	#cont {
+		/*font-size: 10vw;*/
+		font-size: 120%;
+	}
+	#cont .ph:first-letter {font-size:140%;font-weight:bold;}
+}
+</style>
+</head>
+<body>
+<div>
+	<div id="tit">
+		<img src="/pic/glc.png">
+		<span>Garage Labs Corps</span>
+	</div>
+	<ul id="navbar">
+		<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li>
+		<li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li>
+		<li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li>
+		<li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
+	</ul>
+	<div id="navbarfixbox">
+		<ul id="navbar">
+			<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li>
+			<li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li>
+			<li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li>
+			<li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
+		</ul>
+	</div>
+	<div id="cont">
+		<div style="text-align:right;padding:0;margin:-16.5px 5px -16.5px 0;">
+			<a id="sen" style="display:none;" onclick="hl(1)" tabindex="0">En</a>
+			<a id="sit" onclick="hl(2)" tabindex="0">It</a>
+		</div>
+		<h1 class="T" id="we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></h1>
+		<p class="ph" lang="en">
+			Welcome.<br>
+		</p>
+		<p class="ph" lang="it">
+			Benvenuto.<br>
+		</p>
+		<h1 class="T" id="ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></h1>
+		<p class="ph" lang="en">
+			We are a group of passionate programmers.
+		</p>
+		<p class="ph" lang="it">
+			Noi siamo un gruppo di programmatori appassionati.
+		</p>
+		<h1 class="T"  id="wh"><span lang="en">Why</span><span lang="it">Perché</span></h1>
+		<p class="ph" lang="en">
+			Because we want gather passionate programmers.
+		</p>
+		<p class="ph" lang="it">
+			Perché noi vogliamo riunire programmatori appassionati.
+		</p>
+		<h1 class="T" id="cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></h1>
+		<p class="ph" lang="en">
+			Contact us on:
+			<ul lang="en">
+				<li>GitHub: <a href="https://github.com/GarageLabsCorps" target="_blank">https://github.com/GarageLabsCorps</a></li>
+				<li>Telegram: <a href="https://t.me/garagelabs" target="_blank">@garagelabs</a></li>
+				<li>Twitter: <a href="https://twitter.com/GarageLabsCorps" target="_blank">@GarageLabsCorps</a></li>
+				<li>Reddit: <a href="https://reddit.com/u/GarageLabs" target="_blank">https://reddit.com/u/GarageLabs</a></li>
+				<li>Vk: <a href="https://vk.com/garagelabs" target="_blank">https://vk.com/garagelabs</a></li>
+				<li>Slack: <a href="https://garagelabscorps.slack.com" target="_blank">https://garagelabscorps.slack.com</a></li>
+				<li>E-Mail: <a href="mailto:garage.labs.audition@mail.ru">garage.labs.audition@mail.ru</a></li>
+			</ul>
+		</p>
+		<p class="ph" lang="it">
+			Contattaci su:
+			<ul lang="it">
+				<li>GitHub: <a href="https://github.com/GarageLabsCorps" target="_blank">https://github.com/GarageLabsCorps</a></li>
+				<li>Telegram: <a href="https://t.me/garagelabs" target="_blank">@garagelabs</a></li>
+				<li>Twitter: <a href="https://twitter.com/GarageLabsCorps" target="_blank">@GarageLabsCorps</a></li>
+				<li>Reddit: <a href="https://reddit.com/u/GarageLabs" target="_blank">https://reddit.com/u/GarageLabs</a></li>
+				<li>Vk: <a href="https://vk.com/garagelabs" target="_blank">https://vk.com/garagelabs</a></li>
+				<li>Slack: <a href="https://garagelabscorps.slack.com" target="_blank">https://garagelabscorps.slack.com</a></li>
+				<li>E-Mail: <a href="mailto:garage.labs.audition@mail.ru">garage.labs.audition@mail.ru</a></li>
+			</ul>
+		</p>
+	</div>
+</div>
+<script>
+function hl(l) {
+	if (l=="1") {
+		//document.getElementById("en").style.display="block";
+		$("*:lang(en)").show();
+		document.getElementById("sit").style.display="inline-block";
+		document.getElementById("sen").style.display="none";
+		//document.getElementById("it").style.display="none";
+		$("*:lang(it)").hide();
+	} else if (l=="2") {
+		//document.getElementById("it").style.display="block";
+		$("*:lang(it)").show();
+		document.getElementById("sen").style.display="inline-block";
+		document.getElementById("sit").style.display="none";
+		//document.getElementById("en").style.display="none";
+		$("*:lang(en)").hide();
+	} else {
+		console.error("Error: hl: invalid argument.")
+	}
+}
+console.log(navigator.language)
+if (navigator.language=="it-IT"){
+	hl(2);console.info('Italian detected.');
+}
+</script>
+</body>
+</html>
