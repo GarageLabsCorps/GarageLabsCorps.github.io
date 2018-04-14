@@ -141,6 +141,22 @@ a:hover:before, #cont a:focus:before {
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
 }
+#foot {
+	background-color: #001040;
+	text-align: center;
+	border-top: 2px solid #0059b4;
+	margin-top: 20px;
+	padding: 1px 0;
+}
+#dbtn {
+	margin: 10px 0;
+}
+#dbtn input {
+	transition: all 0.3s;
+}
+#dbtn input:hover {
+	filter: hue-rotate(180deg);
+}
 @media only screen and (max-width: 770px) {
 	#tit {
 		text-align: center;
@@ -207,30 +223,28 @@ a:hover:before, #cont a:focus:before {
 			Perché noi vogliamo riunire programmatori appassionati.
 		</p>
 		<h1 class="T" id="cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></h1>
-		<p class="ph" lang="en">
-			Contact us on:
-			<ul lang="en">
-				<li>GitHub: <a href="https://github.com/GarageLabsCorps" target="_blank">https://github.com/GarageLabsCorps</a></li>
+		<p class="ph">
+			<span lang="en">Contact us on:</span><span lang="it">Contattaci su:</span>
+			<ul>
+				<li>GitHub: <a href="https://github.com/GarageLabsCorps" target="_blank">GarageLabsCorps</a></li>
 				<li>Telegram: <a href="https://t.me/garagelabs" target="_blank">@garagelabs</a></li>
 				<li>Twitter: <a href="https://twitter.com/GarageLabsCorps" target="_blank">@GarageLabsCorps</a></li>
-				<li>Reddit: <a href="https://reddit.com/u/GarageLabs" target="_blank">https://reddit.com/u/GarageLabs</a></li>
+				<li>Reddit: <a href="https://reddit.com/u/GarageLabs" target="_blank">u/GarageLabs</a></li>
 				<li>Vk: <a href="https://vk.com/garagelabs" target="_blank">https://vk.com/garagelabs</a></li>
-				<li>Slack: <a href="https://garagelabscorps.slack.com" target="_blank">https://garagelabscorps.slack.com</a></li>
+				<li>Slack: <a href="https://garagelabscorps.slack.com" target="_blank">garagelabscorps</a></li>
 				<li>E-Mail: <a href="mailto:garage.labs.audition@mail.ru">garage.labs.audition@mail.ru</a></li>
 			</ul>
 		</p>
-		<p class="ph" lang="it">
-			Contattaci su:
-			<ul lang="it">
-				<li>GitHub: <a href="https://github.com/GarageLabsCorps" target="_blank">https://github.com/GarageLabsCorps</a></li>
-				<li>Telegram: <a href="https://t.me/garagelabs" target="_blank">@garagelabs</a></li>
-				<li>Twitter: <a href="https://twitter.com/GarageLabsCorps" target="_blank">@GarageLabsCorps</a></li>
-				<li>Reddit: <a href="https://reddit.com/u/GarageLabs" target="_blank">https://reddit.com/u/GarageLabs</a></li>
-				<li>Vk: <a href="https://vk.com/garagelabs" target="_blank">https://vk.com/garagelabs</a></li>
-				<li>Slack: <a href="https://garagelabscorps.slack.com" target="_blank">https://garagelabscorps.slack.com</a></li>
-				<li>E-Mail: <a href="mailto:garage.labs.audition@mail.ru">garage.labs.audition@mail.ru</a></li>
-			</ul>
-		</p>
+	</div>
+	<div id="foot">
+		<p lang="en">We are a nonprofit organization, but you can offer us a pizza.</p>
+		<p lang="it">Noi siamo un'organizzazione nonprofit, ma tu puoi offrirci una pizza.</p>
+		<form id="dbtn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="RBR5RZDT5CQQJ">
+			<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+		</form>
 	</div>
 </div>
 <script>
