@@ -40,26 +40,28 @@ body {
 	font-weight: bold;
 }
 #navbar {
-	z-index: 2;
-	position: relative;
-	list-style-type: none;
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
-	overflow: hidden;
-	background-color: #002768;
-	width: 21.2em;
-	max-width: 100%;
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 #navbar li {
-	float: left;
+	display: inline-block;
 	border-right: 1px #fff solid;
+	margin: 0;
+	padding: 0;
 }
 #navbar li:last-child {
 	border-right: none;
 }
 #navbar li a {
 	display: block;
-	text-align: center;
 	color: #fff;
 	padding: 8px;
 	background-color: #002768;
@@ -69,11 +71,10 @@ body {
 #navbar li a:hover {
 	background-color: #0059b4;
 }
-#navbarfixbox {
+.upfix {
 	z-index: 1;
 	position: fixed;
 	top: 0;
-	width: 100%;
 	background-color: #002768;
 }
 @media only screen and (max-width: 320px) {
@@ -182,18 +183,14 @@ a:hover:before, #cont a:focus:before {
 		<img src="/pic/glc.png">
 		<span>Garage Labs Corps</span>
 	</div>
-	<ul id="navbar">
-		<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li>
-		<li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li>
-		<li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li>
-		<li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
-	</ul>
-	<div id="navbarfixbox">
-		<ul id="navbar">
-			<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li>
-			<li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li>
-			<li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li>
-			<li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
+	<div id="navbar" style="z-index:2;">
+		<ul>
+			<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li><li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li><li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li><li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
+		</ul>
+	</div>
+	<div id="navbar" class="upfix">
+		<ul>
+			<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li><li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li><li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li><li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
 		</ul>
 	</div>
 	<div id="cont">
