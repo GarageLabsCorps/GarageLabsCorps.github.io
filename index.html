@@ -2,226 +2,190 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Garage Labs Corps</title>
-<meta name = "viewport" content="width=device-width,initial-scale=1, minimum-scale=0.4, maximum-scale=1.0">
-<meta name="description" content="Group of programmers">
-<link rel="icon" type="image/png" href="/pic/glc_c.png">
-<script src="/jlib/jquery.min.js"></script>
+<title>Edilizia</title>
+<meta name="description" content="Sito di edilizia">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body {
-	margin:0;
-	padding:0;
-	font-family:arial;
-	color:white;
-	/*background-color:#002768;*/
-	background:linear-gradient(to bottom, #002768 70%,#001758 100%);
+@font-face {
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Fira Sans Regular'), local('FiraSans-Regular'), url(https://fonts.gstatic.com/s/firasans/v10/va9E4kDNxMZdWfMOD5Vvl4jO.ttf) format('truetype');
 }
-*:lang(it) {
-	display:none;
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Fira Sans";
+	scroll-behavior: smooth;
+	background-color: #222;
+	color: #fff;
 }
 #tit {
-	width:100%;
-	max-width:100%;
-	text-align: center;
-	position: relative;
-	background-color: #002768;
-	z-index: 2;
-}
-#tit img {
-	width:30vw;
-	margin-left: 4.7vw;
-	float: left;
-}
-#tit span {
-	display: inline-block;
-	font-size: 6vw;
-	line-height: 30vw;
-	text-align: center;
-	font-weight: bold;
-}
-#navbar {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	float: left;
-	text-align: center;
-}
-#navbar ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-#navbar li {
-	display: inline-block;
-	border-right: 1px #fff solid;
-	margin: 0;
-	padding: 0;
-}
-#navbar li:last-child {
-	border-right: none;
-}
-#navbar li a {
-	display: block;
+	width: 98%;
+	background-color: #000;
+	background-image: url("pic/wall.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: repeat;
+	padding: 18% 0 2% 2%;
+	/*text-align: left;*/
 	color: #fff;
-	padding: 8px;
-	background-color: #002768;
-	text-decoration: none;
-	transition: all 0.5s;
+	font-size: 8vw;
+	/*font-weight: bold;*/
 }
-#navbar li a:hover {
-	background-color: #0059b4;
+@keyframes menuo {
+	from {transform: translate(0,-100%);}
+	to {transform: translate(0,0);}
 }
-.upfix {
-	z-index: 1;
-	position: fixed;
-	top: 0;
-	background-color: #002768;
+@keyframes menuc {
+	from {transform: translate(0,0);}
+	to {transform: translate(0,-100%);}
 }
-@media only screen and (max-width: 320px) {
-	#navbar {
-		width: 100%;
-		font-size: 4vw;
-	}
+.svg-icon {
+  width: 1.5em;
+  height: 1.5em;
 }
-a {
-	text-decoration: none;
-	color: #0059b4;
-	position: relative;
-	cursor: pointer;
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+	fill: #fff;
 }
-a:before {
-	content: "";
-	position: absolute;
+
+.svg-icon circle {
+	stroke: #fff;
+	stroke-width: 1;
+}
+#navbutton {
+	display: none;
+	background-color: #000;
+	text-align: center;
+}
+#shwm {
+	transform: rotate(90deg);
+	transition: all .3s;
+}
+#nav {
 	width: 100%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: #0059b4;
-	visibility: hidden;
-	-webkit-transform: scaleX(0);
-	transform: scaleX(0);
-	-webkit-transition: all 0.3s ease-in-out 0s;
-	transition: all 0.3s ease-in-out 0s;
+	background-color: #000;
+	text-align: center;
+	font-size: 130%;
+	z-index:1;
 }
-a:hover:before, #cont a:focus:before {
-	visibility: visible;
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
+#nav a {
+	text-decoration: none;
+	color:#fff;
+	padding: 10px;
+	transition: all .2s;
+}
+#nav a:hover {
+	background-color: #fff;
+	color: #222;
 }
 #cont {
-	width: 50em;
-	max-width: 90%;
-	margin: 0 auto;
-	margin-top: 20px;
+	padding: 0 25%;
+}
+#cont .o:nth-child(even) {
+	text-align: right;
+}
+#cont .o a {
+	text-decoration: none;
 	color: #fff;
-	/*background-color: #002768;*/
+	font-weight: bold;
 }
-#cont .ph:first-letter {font-size:190%;font-weight:bold;}
-#cont .T {
-	text-align: center;
-	font-size: 50px;
-	position: relative;
-	cursor:default;
+#cont .o a:hover {
+	text-decoration: underline;
 }
-#cont .T:before {
-	content: "";
-	position: absolute;
+#footer {
 	width: 100%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: #0059b4;
-	visibility: hidden;
-	-webkit-transform: scaleX(0);
-	transform: scaleX(0);
-	-webkit-transition: all 0.3s ease-in-out 0s;
-	transition: all 0.3s ease-in-out 0s;
+	background-color: #000;
+	background-image: url("pic/wall.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: repeat;
 }
-#cont .T:hover:before, a:focus:before {
-	visibility: visible;
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
+#footer #fc {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.35);
+	padding: 6vh 0;
 }
-#foot {
-	background-color: #001040;
+#footer #fcc {
+	width: 100%;
 	text-align: center;
-	border-top: 2px solid #0059b4;
-	margin-top: 20px;
-	padding: 1px 0;
-}
-#dbtn {
-	margin: 10px 0;
 }
 #dbtn input {
-	transition: all 0.3s;
+	transition: all .3s;
 }
 #dbtn input:hover {
-	filter: hue-rotate(180deg);
+	filter: brightness(80%)
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 600px) {
 	#tit {
-		text-align: center;
+		font-size: 16vw;
+		position: -webkit-sticky;
+		position: sticky;
+		z-index: 3;
 	}
-	#tit img {
-		margin: 0;
-		width:100%;
+	#navbutton {
+		display: block;
+		position: sticky;
+		z-index: 2
 	}
-	#tit span {
-		font-size: 10vw;
+	#nav {
+		display: none;
+		position: absolute;
+		overflow: hidden;
+		animation-fill-mode: forwards;
+	}
+	#nav a {
+		display: block;
 	}
 	#cont {
-		/*font-size: 10vw;*/
-		font-size: 120%;
+		padding: 0 10%;
 	}
-	#cont .ph:first-letter {font-size:140%;font-weight:bold;}
+	#footer {
+		height: 100vh;
+	}
+	#footer #fc {
+		padding: 0;
+		position: relative;
+	}
+	#footer #fcc {
+	position: absolute;
+	top: 50%;
 }
 </style>
 </head>
 <body>
 <div>
 	<div id="tit">
-		<img src="/pic/glc.png">
-		<span>Garage Labs Corps</span>
+		Garage Labs Corps
 	</div>
-	<div id="navbar" style="z-index:2;">
-		<ul>
-			<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li><li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li><li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li><li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
-		</ul>
+	<div onclick="menu()" id="navbutton">
+		<svg id="shwm" class="svg-icon" viewBox="0 0 20 20">
+			<path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+		</svg>
 	</div>
-	<div id="navbar" class="upfix">
-		<ul>
-			<li><a href="#we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></a></li><li><a href="#ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></a></li><li><a href="#wh"><span lang="en">Why</span><span lang="it">Perché</span></a></li><li><a href="#cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></a></li>
-		</ul>
+	<div id="nav">
+		<a onclick="menu()" href="#tit">Home</a>
+		<a onclick="menu()" href="#w">Who we are</a>
+		<a onclick="menu()" href="#y">Why</a>
+		<a onclick="menu()" href="#c">Contact us</a>
 	</div>
 	<div id="cont">
-		<div style="text-align:right;padding:0;margin:-16.5px 5px -16.5px 0;">
-			<a id="sen" style="display:none;" onclick="hl(1)" tabindex="0">En</a>
-			<a id="sit" onclick="hl(2)" tabindex="0">It</a>
+		<div id="w" class="o">
+			<h1>Who we are</h1>
+			<p>We are a group of passionate programmers.</p>
 		</div>
-		<h1 class="T" id="we"><span lang="en">Welcome</span><span lang="it">Benvenuto</span></h1>
-		<p class="ph" lang="en">
-			Welcome.<br>
-		</p>
-		<p class="ph" lang="it">
-			Benvenuto.<br>
-		</p>
-		<h1 class="T" id="ww"><span lang="en">Who we are</span><span lang="it">Chi siamo</span></h1>
-		<p class="ph" lang="en">
-			We are a group of passionate programmers.
-		</p>
-		<p class="ph" lang="it">
-			Noi siamo un gruppo di programmatori appassionati.
-		</p>
-		<h1 class="T"  id="wh"><span lang="en">Why</span><span lang="it">Perché</span></h1>
-		<p class="ph" lang="en">
-			Because we want gather passionate programmers.
-		</p>
-		<p class="ph" lang="it">
-			Perché noi vogliamo riunire programmatori appassionati.
-		</p>
-		<h1 class="T" id="cu"><span lang="en">Contact us</span><span lang="it">Contattaci</span></h1>
-		<p class="ph">
-			<span lang="en">Contact us on:</span><span lang="it">Contattaci su:</span>
+		<div id="y" class="o">
+			<h1>Why</h1>
+			<p>Because we want gather passionate programmers.</p>
+		</div>
+		<div id="c" class="o">
+			<h1>Contact us</h1>
 			<ul>
 				<li>GitHub: <a href="https://github.com/GarageLabsCorps" target="_blank">GarageLabsCorps</a></li>
 				<li>Telegram: <a href="https://t.me/garagelabs" target="_blank">@garagelabs</a></li>
@@ -231,42 +195,37 @@ a:hover:before, #cont a:focus:before {
 				<li>Slack: <a href="https://garagelabscorps.slack.com" target="_blank">garagelabscorps</a></li>
 				<li>E-Mail: <a href="mailto:garage.labs.audition@mail.ru">garage.labs.audition@mail.ru</a></li>
 			</ul>
-		</p>
+		</div>
 	</div>
-	<div id="foot">
-		<p lang="en">We are a nonprofit organization, but you can offer us a pizza.</p>
-		<p lang="it">Noi siamo un'organizzazione nonprofit, però puoi offrirci una pizza.</p>
-		<form id="dbtn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-			<input type="hidden" name="cmd" value="_s-xclick">
-			<input type="hidden" name="hosted_button_id" value="RBR5RZDT5CQQJ">
-			<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-			<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-		</form>
+	<div id="footer">
+		<div id="fc">
+			<div id="fcc">
+				<p>We are a nonprofit organization, but you can offer us a pizza.</p>
+				<form id="dbtn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="RBR5RZDT5CQQJ">
+					<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
+		</div>
 	</div>
 </div>
 <script>
-function hl(l) {
-	if (l=="1") {
-		//document.getElementById("en").style.display="block";
-		$("*:lang(en)").show();
-		document.getElementById("sit").style.display="inline-block";
-		document.getElementById("sen").style.display="none";
-		//document.getElementById("it").style.display="none";
-		$("*:lang(it)").hide();
-	} else if (l=="2") {
-		//document.getElementById("it").style.display="block";
-		$("*:lang(it)").show();
-		document.getElementById("sen").style.display="inline-block";
-		document.getElementById("sit").style.display="none";
-		//document.getElementById("en").style.display="none";
-		$("*:lang(en)").hide();
-	} else {
-		console.error("Error: hl: invalid argument.")
+var m=false;
+function menu(){
+	if (window.innerWidth<=600){
+		if (!m){
+			document.getElementById("nav").style.display="inline-block";
+			document.getElementById("nav").style.webkitAnimation="menuo .5s forwards";
+			document.getElementById("shwm").style.transform="rotate(-90deg)";
+			m=true;
+		} else {
+			document.getElementById("nav").style.webkitAnimation="menuc .5s forwards";
+			document.getElementById("shwm").style.transform="rotate(90deg)";
+			m=false;
+		}
 	}
-}
-console.log(navigator.language)
-if (navigator.language=="it-IT"){
-	hl(2);console.info('Italian detected.');
 }
 </script>
 </body>
